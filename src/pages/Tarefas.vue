@@ -67,6 +67,6 @@ padding-top:0;
 }
 .inputs{
 padding: 0 16px;
-margin: 2rem 0;
+margin: 2rem 0 1.3rem 0;
 }
 </style>
