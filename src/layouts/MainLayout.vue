@@ -28,7 +28,7 @@
           header
           class="text-grey-8"
         >
-          Essential Links
+          Páginas Principais
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
