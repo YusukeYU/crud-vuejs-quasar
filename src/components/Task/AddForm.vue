@@ -18,8 +18,9 @@
       </q-input>
       <Calendar> </Calendar>
       <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn v-on:click="showAddForm" label="Cancelar" color="primary"/>
+        <q-btn label="Limpar" color="primary"/>
+        <q-btn label="Cadastrar" color="primary"/>
       </div>
     </q-form>
 
@@ -37,6 +38,11 @@ export default {
   },
   components: {
     Calendar
+  },
+  methods: {
+    showAddForm () {
+      this.$emit('show')
+    }
   }
 }
 </script>
@@ -48,5 +54,8 @@ export default {
 .q-field__inner {
     text-align: left;
     width: 400px!important;
+}
+.q-btn{
+  margin-left:8px;
 }
 </style>

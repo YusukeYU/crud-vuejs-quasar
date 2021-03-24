@@ -1,16 +1,18 @@
 <template>
   <div class="container">
     <div class="content">
-      <div class="div-padrao-gus inputs">
-        <BtnGroup></BtnGroup>
-         <h2>Tarefas</h2>
-        <SearchInput @changed="onChangeSearch"></SearchInput>
-      </div>
-      <div class="div-padrao-gus">
+      <div v-if="showListComponents">
+        <div class="div-padrao-gus inputs">
+          <BtnGroup @show="showAddFormFunction"></BtnGroup>
+           <h2>Tarefas</h2>
+          <SearchInput @changed="onChangeSearch"></SearchInput>
+        </div>
+        <div class="div-padrao-gus">
         <DataTable v-bind:receiveRows="name"></DataTable>
+        </div>
       </div>
       <div class="div-padrao-gus">
-        <AddForm> </AddForm>
+        <AddForm @show="showAddFormFunction" v-if="showAddForm"> </AddForm>
       </div>
     </div>
   </div>
@@ -26,7 +28,9 @@ export default {
   name: 'PageTarefas',
   data () {
     return {
-      name: ''
+      name: '',
+      showAddForm: false,
+      showListComponents: true
     }
   },
   components: {
@@ -39,6 +43,10 @@ export default {
     // sempre que o valor do input search for alterado ele entrará na função abaixo passando o valor atual
     onChangeSearch (value) {
       this.name = value
+    },
+    showAddFormFunction () {
+      this.showAddForm = !this.showAddForm
+      this.showListComponents = !this.showListComponents
     }
   }
 }
