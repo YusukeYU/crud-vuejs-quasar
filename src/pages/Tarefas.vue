@@ -4,6 +4,10 @@
       <div class="div-padrao-gus">
         <h1 class="">Tarefas</h1>
       </div>
+      <div class="div-padrao-gus inputs">
+        <BtnGroup></BtnGroup>
+        <SearchInput></SearchInput>
+      </div>
       <div class="div-padrao-gus">
         <DataTable></DataTable>
       </div>
@@ -13,10 +17,14 @@
 
 <script>
 import DataTable from '../components/DataTable.vue'
+import BtnGroup from '../components/Task/BtnGroup.vue'
+import SearchInput from '../components/Task/SearchInput.vue'
 export default {
   name: 'PageTarefas',
   components: {
-    DataTable
+    DataTable,
+    BtnGroup,
+    SearchInput
   }
 }
 </script>
@@ -25,10 +33,13 @@ export default {
 .div-padrao-gus{
 float: left;
 width: 100%;
+text-align:center;
 }
 h1 {
-font-size: 3rem;
+font-size: 2rem;
 position:relative!important;
+line-height: 3rem;
+margin: 2rem 0;
 }
 .fixed-center
 {
@@ -52,5 +63,9 @@ justify-items:center;
 .q-pa-md{
 position: relative;
 padding-top:0;
+}
+.inputs{
+margin-bottom:2rem;
+padding: 0 16px;
 }
 </style>
