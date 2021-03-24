@@ -9,6 +9,9 @@
       <div class="div-padrao-gus">
         <DataTable v-bind:receiveRows="name"></DataTable>
       </div>
+      <div class="div-padrao-gus">
+        <AddForm> </AddForm>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +20,7 @@
 import DataTable from '../components/DataTable.vue'
 import BtnGroup from '../components/Task/BtnGroup.vue'
 import SearchInput from '../components/Task/SearchInput.vue'
+import AddForm from '../components/Task/AddForm.vue'
 
 export default {
   name: 'PageTarefas',
@@ -28,7 +32,8 @@ export default {
   components: {
     DataTable,
     BtnGroup,
-    SearchInput
+    SearchInput,
+    AddForm
   },
   methods: {
     // sempre que o valor do input search for alterado ele entrará na função abaixo passando o valor atual

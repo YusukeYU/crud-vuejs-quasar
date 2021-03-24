@@ -134,7 +134,6 @@ export default {
       this.Current_Size = stringConsulta.length
       // caso o usuário tenha apagado um caracter
       if (this.Current_Size < this.Prev_Size) {
-        console.log('entrei no backup')
         this.rows = this.backup.filter(m => m.name.toLowerCase().indexOf(stringConsulta) > -1)
       } else { // caso o usuário NÃO tenha apagado um caracter
         this.rows = this.rows.filter(m => m.name.toLowerCase().indexOf(stringConsulta) > -1)
