@@ -4,7 +4,7 @@
       <div class="div-padrao-gus inputs">
         <BtnGroup></BtnGroup>
          <h2>Tarefas</h2>
-        <SearchInput></SearchInput>
+        <SearchInput @changed="onChangeSearch"></SearchInput>
       </div>
       <div class="div-padrao-gus">
         <DataTable></DataTable>
@@ -17,12 +17,18 @@
 import DataTable from '../components/DataTable.vue'
 import BtnGroup from '../components/Task/BtnGroup.vue'
 import SearchInput from '../components/Task/SearchInput.vue'
+
 export default {
   name: 'PageTarefas',
   components: {
     DataTable,
     BtnGroup,
     SearchInput
+  },
+  methods: {
+    onChangeSearch (value) {
+      console.log(value)
+    }
   }
 }
 </script>
