@@ -52,13 +52,13 @@ const linksData = [
     title: 'Home',
     caption: 'Página inicial',
     icon: 'home',
-    link: '/#/'
+    link: '/'
   },
   {
     title: 'Tarefas',
     caption: 'Gerenciamento de tarefas do sistema',
     icon: 'list_alt',
-    link: '/#/tarefas'
+    link: '/tarefas'
   }
 ]
 

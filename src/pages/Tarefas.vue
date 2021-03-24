@@ -1,5 +1,5 @@
 <template>
-  <div class="md-alignment-top-center">
+  <div>
     <div class="teste">
       <h1 class="fixed-center">Tarefas</h1>
     </div>
