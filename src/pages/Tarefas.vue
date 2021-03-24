@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <div class="teste">
-      <h1 class="fixed-center">Tarefas</h1>
+  <div class="container">
+    <div class="content">
+      <div class="div-padrao-gus">
+        <h1 class="">Tarefas</h1>
+      </div>
+      <div class="div-padrao-gus">
+        <DataTable></DataTable>
+      </div>
     </div>
-    <DataTable></DataTable>
   </div>
 </template>
 
@@ -17,15 +21,36 @@ export default {
 }
 </script>
 
-<style scoped>
-.teste{
-float:left;
-      }
+<style>
+.div-padrao-gus{
+float: left;
+width: 100%;
+}
 h1 {
-    font-size: 3rem;
-   }
+font-size: 3rem;
+position:relative!important;
+}
 .fixed-center
 {
  top:6%;
+}
+.container{
+max-width: 980px;
+margin-left: auto;
+margin-right: auto;
+height: auto;
+position: relative;
+border-radius: 3px;
+}
+.content{
+position : relative;
+width:100%;
+float :left;
+text-align:center;
+justify-items:center;
+}
+.q-pa-md{
+position: relative;
+padding-top:0;
 }
 </style>
