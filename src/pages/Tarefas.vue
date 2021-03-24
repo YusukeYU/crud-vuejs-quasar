@@ -7,7 +7,7 @@
         <SearchInput @changed="onChangeSearch"></SearchInput>
       </div>
       <div class="div-padrao-gus">
-        <DataTable></DataTable>
+        <DataTable v-bind:receiveRows="name"></DataTable>
       </div>
     </div>
   </div>
@@ -20,14 +20,20 @@ import SearchInput from '../components/Task/SearchInput.vue'
 
 export default {
   name: 'PageTarefas',
+  data () {
+    return {
+      name: ''
+    }
+  },
   components: {
     DataTable,
     BtnGroup,
     SearchInput
   },
   methods: {
+    // sempre que o valor do input search for alterado ele entrará na função abaixo passando o valor atual
     onChangeSearch (value) {
-      console.log(value)
+      this.name = value
     }
   }
 }

@@ -112,7 +112,40 @@ export default {
           calcium: '12%',
           iron: '6%'
         }
-      ]
+      ],
+      name: '',
+      backup: [],
+      Current_Size: '',
+      Prev_Size: 0
+    }
+  },
+  props: {
+    receiveRows: String
+  },
+  created () {
+    // nós criamos um backup de acordo com as linhas atuais
+    this.backup = this.rows
+  },
+  methods: {
+    refreshTable () {
+      // cria uma constante com o valor recebido convertido para caracteres minúsculos
+      const stringConsulta = this.receiveRows.toLowerCase()
+      // atribui o valor atual para o valor da string recebida
+      this.Current_Size = stringConsulta.length
+      // caso o usuário tenha apagado um caracter
+      if (this.Current_Size < this.Prev_Size) {
+        console.log('entrei no backup')
+        this.rows = this.backup.filter(m => m.name.toLowerCase().indexOf(stringConsulta) > -1)
+      } else { // caso o usuário NÃO tenha apagado um caracter
+        this.rows = this.rows.filter(m => m.name.toLowerCase().indexOf(stringConsulta) > -1)
+      }
+      // atribui nosso valor anterior ao valor atual
+      this.Prev_Size = this.Current_Size
+    }
+  },
+  watch: { // caso tenha alguma alteração na receiveRows nós atualizamos a tabela
+    receiveRows: function () {
+      this.refreshTable()
     }
   }
 }
